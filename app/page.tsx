@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 
 export default function HomePage() {
   return (
@@ -13,12 +13,12 @@ export default function HomePage() {
         </p>
         
         <div className="flex justify-center gap-4 pt-2">
-          <Button asChild>
-            <Link href="/login">Login</Link>
-          </Button>
-          <Button variant="outline" asChild>
-            <Link href="/register">Register</Link>
-          </Button>
+          <Link href="/login" className={buttonVariants()}>
+            Login
+          </Link>
+          <Link href="/register" className={buttonVariants({ variant: 'outline' })}>
+            Register
+          </Link>
         </div>
       </div>
     </main>
